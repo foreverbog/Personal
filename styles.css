@@ -12,8 +12,8 @@ body{
 }
 
 .wrapper{
-    width: 400px;
-    height: 400px;
+    width: 100px;
+    height: 20px;
     background-color: rgba(255, 0, 0, 0.527);
     border-radius: 20px;
     margin: 0 auto;
