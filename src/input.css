@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .wrapper {
+        @apply bg-[url('/images/back.jpg')] bg-cover h-[100vh];
+    };
+
+    .form {
+        @apply bg-neutral-100 absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-[400px] rounded-xl shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)] p-4;
+    };
+    .guestcontainer{
+        @apply flex flex-col items-center;
+    }
+    .createBtn{
+        @apply w-[100%] text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2;
+    };
+
+    .smallp {
+        @apply text-[7px] text-center mt-[-0.5rem] font-bold;
+    };
+    .signcontainer{
+        @apply flex justify-center gap-2 w-[100%] mt-4
+    }
+    .signBtn{
+        @apply w-[45%] relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white;
+    };
+    .signSpan{
+        @apply w-[100%] relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0;
+    };
+    .loginForm{
+        @apply flex flex-col justify-center items-center gap-2;
+    };
+    .loginLabel{
+        @apply w-[100%] ml-4 indent-1.5;
+    };
+    .loginInput{
+        @apply mt-2 placeholder:text-gray-600 bg-gradient-to-br from-purple-600/50 to-blue-500/50  border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+
+    }
+    .closeBtn{
+        @apply ms-auto -mx-1.5 -my-1.5 bg-neutral-100 text-gray-400 hover:text-gray-900 rounded-lg p-1.5 focus:ring-0 hover:bg-neutral-200 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700
+    }
+
+}
+
