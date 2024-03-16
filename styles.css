@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+body{
+    
+    background-image: url(./images/13077.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.wrapper{
+    width: 400px;
+    height: 400px;
+    background-color: rgba(255, 0, 0, 0.527);
+    border-radius: 20px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
