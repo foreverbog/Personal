@@ -3,12 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
     <title>ToDo App</title>
 </head>
 <body>
-<div class="center">
-    <div class="wrapper"></div>
+<div class="wrapper">
+    <div class="form">
+        <div class="guest-container">
+            <button>Create a new ToDo</button>
+            <p>As a guest you can save only one ToDo List</p>
+            <div>
+                <button>Register</button>
+                <button >Log in</button>
+            </div>
+        </div>
+        <form  id="login" action="">
+            <label for="email">Enter your Email Adress: 
+                <input class="email" type="email" required placeholder="Your email adress...">
+            </label>
+            <label for="email">Enter your Password: 
+                <input class="pass" type="password" required placeholder="Your Password...">
+            </label>
+            <button>Log in</button>
+        </form>
+        <form  id="register" action="">
+            <label for="username">Enter your Username: 
+                <input class="username" type="text" required placeholder="Your Username...">
+            </label>
+            <label for="email">Enter your Email Adress: 
+                <input class="email" type="email" required placeholder="Your email adress...">
+            </label>
+            <label for="email">Enter your Password: 
+                <input class="pass" type="password" required placeholder="Your Password...">
+            </label>
+            <label for="email">Confirm your Password: 
+                <input class="pass" type="password" required placeholder="Your Password...">
+            </label>
+            <button>Register</button>
+        </form>
+    </div>
 </div>
     
 </body>
