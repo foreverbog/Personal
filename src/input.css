@@ -29,17 +29,17 @@
     .signSpan{
         @apply w-[100%] relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0;
     };
-    .loginForm{
+    .loginFormStyles{
         @apply flex flex-col justify-center items-center gap-2;
     };
     .loginLabel{
-        @apply w-[100%] ml-4 indent-1.5;
+        @apply w-[100%]  indent-1.5;
     };
     .loginInput{
-        @apply mt-2 placeholder:text-gray-600 bg-gradient-to-br from-purple-600/50 to-blue-500/50  border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+        @apply mt-2 placeholder:text-gray-600 bg-neutral-200  border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
 
     }
-    .closeBtn{
+    .closeBtnStyles{
         @apply ms-auto -mx-1.5 -my-1.5 bg-neutral-100 text-gray-400 hover:text-gray-900 rounded-lg p-1.5 focus:ring-0 hover:bg-neutral-200 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700
     }
 
