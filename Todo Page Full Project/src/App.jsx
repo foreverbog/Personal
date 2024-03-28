@@ -20,15 +20,15 @@ function App() {
       <div className="wrapper">
         {!login && !register ? (
           <h1 className="font-title text-neutral-100 text-[4rem] text-center  pt-[200px]  lg:text-[5rem]">
-            Welcome 😎 !
+            Welcome !
           </h1>
         ) : register ? (
           <h1 className="font-title text-neutral-100 text-[3rem] text-center  lg:text-[5rem]">
-            We are happy to have you here 😀 !
+            We are happy to have you here !
           </h1>
         ) : (
           <h1 className="font-title text-neutral-100 text-[4rem] text-center  pt-[200px]  lg:text-[5rem]">
-            Welcome Back 😎 !
+            Welcome Back !
           </h1>
         )}
 
