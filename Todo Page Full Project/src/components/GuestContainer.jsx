@@ -1,24 +1,37 @@
-const GuestContainer = ({ Login, Register }) => {
+import { Link } from "react-router-dom";
+
+const GuestContainer = (props) => {
+  const { logInStatus, logInClick } = props;
   return (
-    <div className="guestcontainer">
-      <button type="button" className="createBtn font-title ">
-        <a id="createToDo" href="Todo Page/index.html">
-          Create your ToDo{" "}
-        </a>
-      </button>
-      <p className="smallp font-title">
-        *As a guest you can save only one ToDo List
-      </p>
-      <div className="signcontainer">
-        <button
-          onClick={Register}
-          className="registerBtn signBtn group font-title  "
-        >
-          <span className="signSpan">Register</span>
-        </button>
-        <button onClick={Login} className=" logInBtn signBtn group">
-          <span className=" signSpan font-title">Log in</span>
-        </button>
+    <div className="form">
+      <div className="guestcontainer">
+        <Link to="/todolist" className="createBtn font-title ">
+          Create your ToDo
+        </Link>
+        {!logInStatus ? (
+          <p className="smallp font-title">
+            *As a guest you can save only one ToDo List
+          </p>
+        ) : (
+          ""
+        )}
+        {!logInStatus ? (
+          <div className="signcontainer">
+            <Link
+              to="/register"
+              className="registerBtn signBtn group font-title  "
+            >
+              <span className="signSpan text-center">Register</span>
+            </Link>
+            <Link to="/login" className=" logInBtn signBtn group">
+              <span className=" signSpan font-title text-center">Log in</span>
+            </Link>
+          </div>
+        ) : (
+          <Link onClick={logInClick} to="/" className=" logInBtn signBtn group">
+            <span className=" signSpan font-title text-center">Log out</span>
+          </Link>
+        )}
       </div>
     </div>
   );

@@ -1,24 +1,18 @@
-import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import GuestContainer from "./components/GuestContainer";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
+import { useState } from "react";
 function App() {
-  const [login, setLogin] = useState(false);
-  const [register, setRegister] = useState(false);
-
-  const handleLogin = () => {
-    setLogin(!login);
-    setRegister(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const handleOnClick = () => {
+    setLoggedIn(!loggedIn);
   };
-  const handleRegister = () => {
-    setRegister(!register);
-    setLogin(false);
-  };
-
   return (
     <>
       <div className="wrapper">
-        {!login && !register ? (
+        {/* BEFORE LEARNING REACT ROUTE */}
+        {/* {!login && !register ? (
           <h1 className="font-title text-neutral-100 text-[4rem] text-center  pt-[200px]  lg:text-[5rem]">
             Welcome !
           </h1>
@@ -40,7 +34,31 @@ function App() {
           ) : (
             <RegisterForm Register={handleRegister} />
           )}
-        </div>
+        </div> */}
+
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <GuestContainer
+                logInStatus={loggedIn}
+                logInClick={handleOnClick}
+              />
+            }
+          />
+          <Route path="/todolist" element={<div>TODO LIST APP</div>} />
+          <Route
+            path="/login"
+            element={
+              <LoginForm
+                logInStatus={loggedIn}
+                setLoggedInStatus={setLoggedIn}
+                logInClick={handleOnClick}
+              />
+            }
+          />
+          <Route path="/register" element={<RegisterForm />} />
+        </Routes>
       </div>
     </>
   );
