@@ -1,9 +1,14 @@
-import { Route, Routes } from "react-router-dom";
-import GuestContainer from "./components/GuestContainer";
-import LoginForm from "./components/LoginForm";
-import RegisterForm from "./components/RegisterForm";
+import GuestContainer from "./pages/GuestContainer";
+import LoginForm from "./pages/LoginForm";
+import RegisterForm from "./pages/RegisterForm";
+import AddToDo from "./components/AddToDo";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 function App() {
+  const location = useLocation();
   const [loggedIn, setLoggedIn] = useState(false);
   const handleOnClick = () => {
     setLoggedIn(!loggedIn);
@@ -35,30 +40,33 @@ function App() {
             <RegisterForm Register={handleRegister} />
           )}
         </div> */}
-
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <GuestContainer
-                logInStatus={loggedIn}
-                logInClick={handleOnClick}
-              />
-            }
-          />
-          <Route path="/todolist" element={<div>TODO LIST APP</div>} />
-          <Route
-            path="/login"
-            element={
-              <LoginForm
-                logInStatus={loggedIn}
-                setLoggedInStatus={setLoggedIn}
-                logInClick={handleOnClick}
-              />
-            }
-          />
-          <Route path="/register" element={<RegisterForm />} />
-        </Routes>
+        <NavBar />
+        <AnimatePresence>
+          <Routes location={location} key={location.pathname}>
+            <Route
+              path="/"
+              element={
+                <GuestContainer
+                  logInStatus={loggedIn}
+                  logInClick={handleOnClick}
+                />
+              }
+            />
+            <Route path="/todolist" element={<AddToDo />} />
+            <Route
+              path="/login"
+              element={
+                <LoginForm
+                  logInStatus={loggedIn}
+                  setLoggedInStatus={setLoggedIn}
+                  logInClick={handleOnClick}
+                />
+              }
+            />
+            <Route path="/register" element={<RegisterForm />} />
+          </Routes>
+        </AnimatePresence>
+        <Footer />
       </div>
     </>
   );

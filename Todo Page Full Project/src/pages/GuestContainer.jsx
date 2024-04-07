@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const GuestContainer = (props) => {
   const { logInStatus, logInClick } = props;
   return (
-    <div className="form">
+    <motion.main
+      className="form main__container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="guestcontainer">
         <Link to="/todolist" className="createBtn font-title ">
           Create your ToDo
@@ -33,7 +40,7 @@ const GuestContainer = (props) => {
           </Link>
         )}
       </div>
-    </div>
+    </motion.main>
   );
 };
 

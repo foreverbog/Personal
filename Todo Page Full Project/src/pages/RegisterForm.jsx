@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
-
+import { motion } from "framer-motion";
 const RegisterForm = () => {
   return (
-    <div className="form">
+    <motion.div
+      className="form main__container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
       <form className="registerForm loginFormStyles " id="register" action="">
         <Link
           to="/"
@@ -128,7 +134,7 @@ const RegisterForm = () => {
           </button>
         </div>
       </form>
-    </div>
+    </motion.div>
   );
 };
 
