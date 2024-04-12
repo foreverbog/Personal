@@ -1,7 +1,8 @@
 import GuestContainer from "./pages/GuestContainer";
 import LoginForm from "./pages/LoginForm";
 import RegisterForm from "./pages/RegisterForm";
-import AddToDo from "./components/AddToDo";
+import TodoList from "./pages/TodoList";
+import NotFound from "./pages/NotFound";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import { Route, Routes, useLocation } from "react-router-dom";
@@ -52,7 +53,7 @@ function App() {
                 />
               }
             />
-            <Route path="/todolist" element={<AddToDo />} />
+            <Route path="/todolist" element={<TodoList />} />
             <Route
               path="/login"
               element={
@@ -64,6 +65,7 @@ function App() {
               }
             />
             <Route path="/register" element={<RegisterForm />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
         <Footer />
