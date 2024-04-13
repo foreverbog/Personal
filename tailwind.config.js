@@ -5,7 +5,12 @@ export default {
     fontFamily: {
       title: ["Sulphur Point", "sans-serif"],
     },
-    extend: {},
+
+    extend: {
+      screens: {
+        xs: "320px",
+      },
+    },
   },
   plugins: [],
 };
