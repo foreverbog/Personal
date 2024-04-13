@@ -5,7 +5,23 @@ import { FaEdit, FaCheck } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 const TodoList = () => {
   const [task, setTask] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([
+    {
+      id: 1,
+      task: "Eat Breakfast 🥐",
+      completed: false,
+    },
+    {
+      id: 2,
+      task: "Go Shopping 🛒",
+      completed: true,
+    },
+    {
+      id: 3,
+      task: "Walk the dog 🐶 ",
+      completed: false,
+    },
+  ]);
   const [editTaskId, setEditTaskId] = useState(null);
   const [editedTask, setEditedTask] = useState("");
 
@@ -76,7 +92,7 @@ const TodoList = () => {
   }, []);
   return (
     <motion.div
-      className="form main__container"
+      className="form  max-h-[600px]  overflow-auto main__container"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -135,8 +151,8 @@ const TodoList = () => {
             key={todo.id}
             className={
               todo.completed
-                ? "flex bg-gradient-to-br from-purple-600/50 to-blue-500/50 opacity-50 p-4 rounded-lg hover:scale-105 transition-all duration-500 text-black text-lg"
-                : "flex  p-4 rounded-lg hover:scale-105 transition-all duration-500 bg-neutral-200 text-lg"
+                ? "flex bg-gradient-to-br from-purple-600/50 to-blue-500/50 opacity-50 p-4 rounded-lg hover:scale-105 transition-all duration-500 text-black text-lg cursor-pointer"
+                : "flex  p-4 rounded-lg hover:scale-105 transition-all duration-500 bg-neutral-200 text-lg cursor-pointer"
             }
           >
             {editTaskId === todo.id ? (
