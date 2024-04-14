@@ -3,6 +3,7 @@ import { useState } from "react";
 import { TiThMenu } from "react-icons/ti";
 import { IoSettingsSharp } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle";
 
 const NavBar = ({ loggedIn }) => {
   const [sideBar, setSideBar] = useState(false);
@@ -10,10 +11,11 @@ const NavBar = ({ loggedIn }) => {
     setSideBar(!sideBar);
   };
   return (
-    <div className="bg-neutral-100/70 hover:bg-neutral-100  duration-300 flex justify-between items-center">
+    <div className="bg-neutral-100/70 dark:bg-slate-800 hover:bg-neutral-100  duration-300 flex justify-between items-center">
       <NavLink to="/">
         <img className="w-20 ml-8 " src={Logo} alt="logo" />
       </NavLink>
+
       <div>
         <button className="lg:hidden mr-8">
           <TiThMenu onClick={handleSideBar} className="w-6 h-6" />
@@ -36,8 +38,12 @@ const NavBar = ({ loggedIn }) => {
         </div>
       ) : (
         <div className="  hidden lg:flex gap-4 mr-8">
+          <ThemeToggle className="dark:text-white" />
           <button className="hover:underline  font-title text-md">
-            <IoSettingsSharp onClick={handleSideBar} className="w-6 h-6" />
+            <IoSettingsSharp
+              onClick={handleSideBar}
+              className="w-6 h-6 dark:text-white"
+            />
           </button>
           <NavLink to="/docs" className="createBtn font-title m-0">
             Docs
