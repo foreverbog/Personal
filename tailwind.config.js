@@ -11,6 +11,12 @@ export default {
       screens: {
         xs: "320px",
       },
+      colors: {
+        primary: {
+          light: "#F5F5F5",
+          dark: "#363062",
+        },
+      },
     },
   },
   plugins: [],

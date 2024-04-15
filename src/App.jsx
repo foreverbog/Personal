@@ -41,7 +41,7 @@ function App() {
             <RegisterForm Register={handleRegister} />
           )}
         </div> */}
-        <NavBar loggedIn={loggedIn} />
+        <NavBar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
         <AnimatePresence>
           <Routes location={location} key={location.pathname}>
             <Route

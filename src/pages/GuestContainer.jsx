@@ -5,7 +5,7 @@ const GuestContainer = (props) => {
   const { logInStatus, logInClick } = props;
   return (
     <motion.main
-      className="form main__container"
+      className="form dark:bg-[#222831] main__container"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
