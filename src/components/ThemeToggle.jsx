@@ -11,7 +11,7 @@ const ThemeToggle = () => {
   };
 
   return (
-    <label className="inline-flex items-center mr-4 cursor-pointer gap-2">
+    <label className="inline-flex items-center cursor-pointer gap-2">
       <MdLightMode
         className={`w-4 h-4 dark:text-white ${darkMode ? "opacity-40" : ""}`}
       />

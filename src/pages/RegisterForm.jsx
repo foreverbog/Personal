@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const RegisterForm = () => {
   return (
     <motion.div
-      className="form main__container"
+      className="tallFormStyle main__container"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

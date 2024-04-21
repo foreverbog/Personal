@@ -38,6 +38,7 @@ const NavBar = ({ loggedIn, setLoggedIn }) => {
       {/* Loggedn state */}
       {loggedIn ? (
         <div className=" hidden lg:flex gap-4 mr-8 p-4">
+          <ThemeToggle className="dark:text-white" />
           <NavLink to="/docs" className="createBtn font-title m-0">
             Docs
           </NavLink>

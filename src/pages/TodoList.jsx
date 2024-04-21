@@ -75,7 +75,7 @@ const TodoList = () => {
       alert("Please enter a task");
     } else {
       const newTodo = { id: crypto.randomUUID(), task };
-      const newTodos = [...todos, newTodo];
+      const newTodos = [newTodo, ...todos];
       setTodos(newTodos);
       //Store to local storage
       localStorage.setItem("Tasks", JSON.stringify(newTodos));
@@ -92,7 +92,7 @@ const TodoList = () => {
   }, []);
   return (
     <motion.div
-      className="form  max-h-[600px]  overflow-auto main__container"
+      className="tallFormStyle main__container"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -102,7 +102,7 @@ const TodoList = () => {
         <Link
           to="/"
           type="button"
-          className="closeBtn closeBtnStyles"
+          className="closeBtnStyles"
           data-dismiss-target="#toast-warning"
           aria-label="Close"
         >
@@ -137,10 +137,7 @@ const TodoList = () => {
             value={task}
             onChange={handleChange}
           />
-          <button
-            className="border-none outline-none  text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center  font-title "
-            type="submit"
-          >
+          <button className="addTodoBtn " type="submit">
             ADD
           </button>
         </div>
@@ -149,11 +146,7 @@ const TodoList = () => {
         {todos.map((todo) => (
           <div
             key={todo.id}
-            className={
-              todo.completed
-                ? "flex bg-gradient-to-br from-purple-600/50 to-blue-500/50 opacity-50 p-4 rounded-lg hover:scale-105 transition-all duration-500 text-black text-lg cursor-pointer"
-                : "flex  p-4 rounded-lg hover:scale-105 transition-all duration-500 bg-neutral-200 text-lg cursor-pointer"
-            }
+            className={todo.completed ? "taskStyleCompleted" : "taskStyle"}
           >
             {editTaskId === todo.id ? (
               <input

@@ -1,4 +1,5 @@
 import UserAvatar from "./UserAvatar";
+import ThemeToggle from "./ThemeToggle";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 const SideBar = ({
@@ -69,36 +70,40 @@ const SideBar = ({
   return (
     <div
       className={
-        sideBar
-          ? "flex flex-col absolute top-0 right-0 bottom-0 w-80 bg-primary-light z-50  shadow-[0_0_0_10000px_rgba(0,0,0,.40)] transition-all ease-out duration-500  "
-          : "flex flex-col absolute top-0 right-0 bottom-0 w-80 bg-primary-light z-50  opacity-0  invisible transition-all ease-out duration-500 "
+        sideBar ? "sideBarStyles" : "sideBarStyles opacity-0 invisible  "
       }
     >
-      <button
-        onClick={handleSideBar}
-        to="/"
-        type="button"
-        className=" closeBtnStyles ms-auto mx-4 my-4 w-10 h-10"
-        data-dismiss-target="#toast-warning"
-        aria-label="Close"
-      >
-        <span className="sr-only">Close</span>
-        <svg
-          className="w-4 h-4"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 14 14"
+      <div className="inline-flex justify-between items-center">
+        <div className="ml-4">
+          <ThemeToggle className="" />
+        </div>
+
+        <button
+          onClick={handleSideBar}
+          to="/"
+          type="button"
+          className="sideBarClose"
+          data-dismiss-target="#toast-warning"
+          aria-label="Close"
         >
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-          />
-        </svg>
-      </button>
+          <span className="sr-only">Close</span>
+          <svg
+            className="w-4 h-4"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 14"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+            />
+          </svg>
+        </button>
+      </div>
 
       {loggedIn ? (
         <div className="flex flex-col justify-center items-center">
@@ -111,36 +116,67 @@ const SideBar = ({
               lastName={lastName}
             />
           </button>
-          <button onClick={handleEdit}>Edit Profile</button>
+          <button className="w-full">
+            <span
+              onClick={handleEdit}
+              className={`${
+                editProfile ? "after:w-full" : "after:w-2"
+              } sideBarNav`}
+            >
+              Edit Profile
+            </span>
+          </button>
           {editProfile && (
-            <form onSubmit={handleSave}>
-              <label htmlFor="lastName">Enter your last name</label>
+            <form onSubmit={handleSave} className="mb-8">
+              <label htmlFor="lastName" className="loginLabel">
+                Enter your last name
+              </label>
               <input
                 value={lastName}
                 onChange={handleLastNameChange}
                 id="lastName"
                 name="lastName"
-                className="bg-red-300"
+                className="loginInput"
+                placeholder="Enter your last name..."
                 type="text"
-              ></input>{" "}
+              />
               <br />
-              <label htmlFor="firstName">Enter your first name</label>
+              <label htmlFor="firstName" className="loginLabel">
+                Enter your first name
+              </label>
               <input
                 value={firstName}
                 onChange={handleFirstNameChange}
                 id="firstName"
                 name="firstName"
-                className="bg-red-300"
+                className="loginInput"
+                placeholder="Enter your first name..."
                 type="text"
-              ></input>{" "}
+              />
               <br />
-              <button type="submit">Save</button>
+              <button className="createBtn" type="submit">
+                Save
+              </button>
             </form>
           )}
-          <button onClick={handleChangeColor}>Change Avatar Color</button>
-          <button onClick={handleOpenUpload}>Upload Profile Image</button>
+          <button className="w-full">
+            <span onClick={handleChangeColor} className="sideBarNav">
+              Change Avatar Color
+            </span>
+          </button>
+          <button className="w-full">
+            <span
+              onClick={handleOpenUpload}
+              className={`${
+                uploadImage ? "after:w-full" : "after:w-2"
+              } sideBarNav`}
+            >
+              Upload Profile Image
+            </span>
+          </button>
           {uploadImage && (
             <input
+              className="uploadFile"
               onChange={handleUploadImage}
               type="file"
               name="avatar"
@@ -149,24 +185,45 @@ const SideBar = ({
             />
           )}
 
-          <p>About</p>
-          <p>Help</p>
-          <p>Settings</p>
-          <button className="absolute bottom-20">
+          <p className="w-full text-center">
+            <span className="sideBarNav">About</span>
+          </p>
+          <p className="w-full text-center">
+            <span className="sideBarNav">Help</span>
+          </p>
+          <p className="w-full text-center">
+            <span className="sideBarNav">Settings</span>
+          </p>
+
+          <button
+            className={`${
+              editProfile || uploadImage
+                ? "createBtn w-1/2 "
+                : "absolute bottom-20 createBtn w-1/2"
+            }`}
+          >
             <Link onClick={handleLogOut} to="/">
               Log Out
             </Link>
           </button>
         </div>
       ) : (
-        <div>
-          <p>About</p>
-          <p>Help</p>
-          <p>Settings</p>
-          <button className="absolute bottom-20">
-            <Link onClick={handleSideBar} to="/login">
-              Log in
-            </Link>
+        <div className="flex flex-col justify-center items-center gap-8 my-[20%]">
+          <p className="w-full text-center">
+            <span className="sideBarNav">About</span>
+          </p>
+          <p className="w-full text-center">
+            <span className="sideBarNav">Help</span>
+          </p>
+          <p className="w-full text-center">
+            <span className="sideBarNav">Setting</span>
+          </p>
+
+          <button
+            onClick={handleSideBar}
+            className="absolute bottom-20 createBtn w-1/2"
+          >
+            <Link to="/login">Log in</Link>
           </button>
         </div>
       )}

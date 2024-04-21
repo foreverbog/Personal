@@ -4,7 +4,7 @@
 
 @layer components {
   .wrapper {
-    @apply bg-[url('/src/assets/images/back.jpg')] bg-cover h-dvh dark:bg-[url('/src/assets/images/dark8.jpg')];
+    @apply bg-[url('/src/assets/images/back.jpg')] bg-cover h-dvh dark:bg-[url('/src/assets/images/back-dark.jpg')];
   }
 
   .form {
@@ -40,5 +40,32 @@
   }
   .closeBtnStyles {
     @apply ms-auto -mx-1.5 -my-1.5 bg-neutral-100 text-gray-400 hover:text-gray-900 rounded-lg p-1.5 focus:ring-0 hover:bg-neutral-200 inline-flex items-center justify-center h-8 w-8;
+  }
+  .tallFormStyle {
+    @apply form  max-h-[500px] my-4  overflow-auto;
+  }
+  .addTodoBtn {
+    @apply border-none outline-none  text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center  font-title;
+  }
+  .taskStyle {
+    @apply flex  p-4 rounded-lg hover:scale-105 transition-all duration-500 bg-neutral-200 text-lg cursor-pointer;
+  }
+  .taskStyleCompleted {
+    @apply flex bg-gradient-to-br from-purple-600/50 to-blue-500/50 opacity-50 p-4 rounded-lg hover:scale-105 transition-all duration-500 text-black text-lg cursor-pointer;
+  }
+
+  .sideBarStyles {
+    @apply font-title flex flex-col absolute top-0 right-0 bottom-0 w-80 bg-primary-light z-50  shadow-[0_0_0_10000px_rgba(0,0,0,.40)] transition-all ease-out duration-500 overflow-scroll;
+  }
+
+  .sideBarNav {
+    @apply w-1/2 p-4 text-lg after:relative after:bg-gradient-to-br from-purple-600 to-blue-500 after:block  after:opacity-65 after:h-1 after:w-2 after:hover:w-full after:transition-all after:ease-in-out after:duration-1000 cursor-pointer;
+  }
+
+  .sideBarClose {
+    @apply closeBtnStyles ms-auto mx-4 my-4 w-10 h-10;
+  }
+  .uploadFile {
+    @apply file:bg-gradient-to-br from-purple-600 to-blue-500 file:text-white file:rounded-lg file:font-title file:px-5 file:py-1 file:text-center file:w-full  file:cursor-pointer mb-8 w-1/2  rounded-lg;
   }
 }
