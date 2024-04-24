@@ -31,14 +31,14 @@ const NavBar = ({ loggedIn, setLoggedIn }) => {
       </NavLink>
 
       <div>
-        <button className="lg:hidden mr-8">
+        <button className="lg:hidden mr-8 dark:text-white/60">
           <TiThMenu onClick={handleSideBar} className="w-6 h-6" />
         </button>
       </div>
       {/* Loggedn state */}
       {loggedIn ? (
         <div className=" hidden lg:flex gap-4 mr-8 p-4">
-          <ThemeToggle className="dark:text-white" />
+          <ThemeToggle />
           <NavLink to="/docs" className="createBtn font-title m-0">
             Docs
           </NavLink>
@@ -55,11 +55,11 @@ const NavBar = ({ loggedIn, setLoggedIn }) => {
         </div>
       ) : (
         <div className="  hidden lg:flex gap-4 mr-8">
-          <ThemeToggle className="dark:text-white" />
+          <ThemeToggle />
           <button className="hover:underline  font-title text-md">
             <IoSettingsSharp
               onClick={handleSideBar}
-              className="w-6 h-6 dark:text-white"
+              className="w-6 h-6 dark:text-white/60"
             />
           </button>
           <NavLink to="/docs" className="createBtn font-title m-0">

@@ -123,13 +123,13 @@ const TodoList = () => {
             />
           </svg>
         </Link>
-        <h2 className="font-title text-center text-2xl ">
+        <h2 className="font-title text-center text-2xl  dark:text-white/60">
           What are your tasks? 📝
         </h2>
 
-        <div className="flex  rounded-xl  bg-neutral-200 mt-2 mb-8">
+        <div className="flex  rounded-xl  bg-neutral-200 mt-2 mb-8 dark:bg-[#393e4679]">
           <input
-            className="w-full  outline-none p-4 font-title   placeholder:text-gray-600 bg-neutral-200   text-gray-900 rounded-lg block text-xl"
+            className="w-full  outline-none p-4 font-title   placeholder:text-gray-600 bg-transparent   text-gray-900 rounded-lg block text-xl  dark:placeholder:text-white/60 dark:text-white"
             type="text"
             id="addTask"
             name="addTask"

@@ -5,7 +5,7 @@ const GuestContainer = (props) => {
   const { logInStatus, logInClick } = props;
   return (
     <motion.main
-      className="form dark:bg-[#1b212c] main__container"
+      className="form main__container"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -16,9 +16,7 @@ const GuestContainer = (props) => {
           Create your ToDo
         </Link>
         {!logInStatus ? (
-          <p className="smallp font-title dark:text-white">
-            *As a guest you can save only one ToDo List
-          </p>
+          <p className="smallp ">*As a guest you can save only one ToDo List</p>
         ) : (
           ""
         )}
@@ -28,7 +26,7 @@ const GuestContainer = (props) => {
               to="/register"
               className="registerBtn signBtn group font-title  "
             >
-              <span className="signSpan text-center">Register</span>
+              <span className="signSpan ">Register</span>
             </Link>
             <Link to="/login" className=" logInBtn signBtn group">
               <span className=" signSpan font-title text-center">Log in</span>

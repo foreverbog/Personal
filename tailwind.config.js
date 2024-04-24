@@ -18,10 +18,14 @@ export default {
         },
         secondary: {
           light: "#9333ea",
-          dark: "#",
+          dark: "#6fffe9",
         },
         accent: {
           light: "#3b82f6 ",
+          dark: "#FFE96F",
+        },
+        input: {
+          light: "#",
           dark: "#",
         },
       },
