@@ -25,7 +25,7 @@ const NavBar = ({ loggedIn, setLoggedIn }) => {
     setSideBar(!sideBar);
   };
   return (
-    <div className="bg-primary-light bg-opacity-70 dark:bg-[#222831] hover:bg-neutral-100  duration-300 flex justify-between items-center">
+    <div className="bg-primary-light bg-opacity-70 dark:bg-primary-dark hover:bg-neutral-100  duration-300 flex justify-between items-center">
       <NavLink to="/">
         <img className="w-20 ml-8 " src={Logo} alt="logo" />
       </NavLink>

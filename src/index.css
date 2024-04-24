@@ -8,13 +8,13 @@
   }
 
   .form {
-    @apply bg-neutral-100 absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] xs:w-[300px] min-[400px]:w-[350px] min-[450px]:w-[400px] rounded-xl shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)] p-4;
+    @apply bg-primary-light absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] xs:w-[300px] min-[400px]:w-[350px] min-[450px]:w-[400px] rounded-xl shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)] p-4;
   }
   .guestcontainer {
     @apply flex flex-col items-center;
   }
   .createBtn {
-    @apply w-[100%] text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2;
+    @apply w-[100%] text-white bg-gradient-to-br from-secondary-light to-accent-light hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:from-[#364156] dark:to-[#212d40];
   }
 
   .smallp {
@@ -24,10 +24,10 @@
     @apply flex justify-center gap-2 w-[100%] mt-4;
   }
   .signBtn {
-    @apply w-[45%] relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white;
+    @apply w-[45%] relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg bg-gradient-to-br from-secondary-light to-accent-light  group-hover:from-secondary-light group-hover:to-accent-light hover:text-white dark:from-[#212d40] dark:to-[#364156] dark:text-white;
   }
   .signSpan {
-    @apply w-[100%] relative px-5 py-2.5 transition-all ease-in duration-75 bg-neutral-100 rounded-md group-hover:bg-opacity-0;
+    @apply w-[100%] relative px-5 py-2.5 transition-all ease-in duration-75 bg-primary-light rounded-md group-hover:bg-opacity-0 dark:bg-[#1b212c];
   }
   .loginFormStyles {
     @apply flex flex-col justify-center items-center gap-2;
@@ -39,19 +39,19 @@
     @apply mt-2 placeholder:text-gray-600 bg-neutral-200  border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5;
   }
   .closeBtnStyles {
-    @apply ms-auto -mx-1.5 -my-1.5 bg-neutral-100 text-gray-400 hover:text-gray-900 rounded-lg p-1.5 focus:ring-0 hover:bg-neutral-200 inline-flex items-center justify-center h-8 w-8;
+    @apply ms-auto -mx-1.5 -my-1.5 bg-primary-light text-gray-400 hover:text-gray-900 rounded-lg p-1.5 focus:ring-0 hover:bg-neutral-200 inline-flex items-center justify-center h-8 w-8;
   }
   .tallFormStyle {
     @apply form  max-h-[500px] my-4  overflow-auto;
   }
   .addTodoBtn {
-    @apply border-none outline-none  text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center  font-title;
+    @apply border-none outline-none  text-white bg-gradient-to-br from-secondary-light to-accent-light hover:scale-x-105 transition-all duration-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  font-title;
   }
   .taskStyle {
     @apply flex  p-4 rounded-lg hover:scale-105 transition-all duration-500 bg-neutral-200 text-lg cursor-pointer;
   }
   .taskStyleCompleted {
-    @apply flex bg-gradient-to-br from-purple-600/50 to-blue-500/50 opacity-50 p-4 rounded-lg hover:scale-105 transition-all duration-500 text-black text-lg cursor-pointer;
+    @apply flex bg-gradient-to-br  from-secondary-light/50 to-accent-light/50 opacity-50 p-4 rounded-lg hover:scale-105 transition-all duration-500 text-black text-lg cursor-pointer;
   }
 
   .sideBarStyles {
@@ -59,13 +59,13 @@
   }
 
   .sideBarNav {
-    @apply w-1/2 p-4 text-lg after:relative after:bg-gradient-to-br from-purple-600 to-blue-500 after:block  after:opacity-65 after:h-1 after:w-2 after:hover:w-full after:transition-all after:ease-in-out after:duration-1000 cursor-pointer;
+    @apply w-1/2 p-4 text-lg after:relative after:bg-gradient-to-br from-secondary-light to-accent-light after:block  after:opacity-65 after:h-1 after:w-2 after:hover:w-full after:transition-all after:ease-in-out after:duration-1000 cursor-pointer;
   }
 
   .sideBarClose {
     @apply closeBtnStyles ms-auto mx-4 my-4 w-10 h-10;
   }
   .uploadFile {
-    @apply file:bg-gradient-to-br from-purple-600 to-blue-500 file:text-white file:rounded-lg file:font-title file:px-5 file:py-1 file:text-center file:w-full  file:cursor-pointer mb-8 w-1/2  rounded-lg;
+    @apply file:bg-gradient-to-br from-secondary-light to-accent-light file:text-white file:rounded-lg file:font-title file:px-5 file:py-1 file:text-center file:w-full  file:cursor-pointer mb-8 w-1/2  rounded-lg;
   }
 }

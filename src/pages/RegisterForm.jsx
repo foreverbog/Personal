@@ -4,6 +4,7 @@ const RegisterForm = () => {
   return (
     <motion.div
       className="tallFormStyle main__container"
+      s
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -13,7 +14,7 @@ const RegisterForm = () => {
         <Link
           to="/"
           type="button"
-          className="closeBtn2 closeBtnStyles"
+          className=" closeBtnStyles"
           data-dismiss-target="#toast-warning"
           aria-label="Close"
         >
