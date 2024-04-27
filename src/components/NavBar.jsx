@@ -1,4 +1,4 @@
-import Logo from "../../public/images/Logo.png";
+import Logo from "/images/Logo.png";
 import { useState } from "react";
 import { TiThMenu } from "react-icons/ti";
 import { IoSettingsSharp } from "react-icons/io5";
