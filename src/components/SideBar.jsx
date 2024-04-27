@@ -18,6 +18,8 @@ const SideBar = ({
   setAvatarImage,
   imageAlt,
   setImageAlt,
+  darkMode,
+  toggleDark,
 }) => {
   const [editProfile, setEditProfile] = useState(false);
   const [uploadImage, setUploadImage] = useState(false);
@@ -75,7 +77,7 @@ const SideBar = ({
     >
       <div className="inline-flex justify-between items-center">
         <div className="ml-4">
-          <ThemeToggle className="" />
+          <ThemeToggle darkMode={darkMode} toggleDark={toggleDark} />
         </div>
 
         <button

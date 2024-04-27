@@ -1,4 +1,4 @@
-import Logo from "../assets/images/Logo.png";
+import Logo from "../../public/images/Logo.png";
 import { useState } from "react";
 import { TiThMenu } from "react-icons/ti";
 import { IoSettingsSharp } from "react-icons/io5";
@@ -7,7 +7,7 @@ import ThemeToggle from "./ThemeToggle";
 import SideBar from "./SideBar";
 import UserAvatar from "./UserAvatar";
 
-const NavBar = ({ loggedIn, setLoggedIn }) => {
+const NavBar = ({ loggedIn, setLoggedIn, darkMode, toggleDark }) => {
   const [sideBar, setSideBar] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -38,7 +38,7 @@ const NavBar = ({ loggedIn, setLoggedIn }) => {
       {/* Loggedn state */}
       {loggedIn ? (
         <div className=" hidden lg:flex gap-4 mr-8 p-4">
-          <ThemeToggle />
+          <ThemeToggle darkMode={darkMode} toggleDark={toggleDark} />
           <NavLink to="/docs" className="createBtn font-title m-0">
             Docs
           </NavLink>
@@ -55,7 +55,7 @@ const NavBar = ({ loggedIn, setLoggedIn }) => {
         </div>
       ) : (
         <div className="  hidden lg:flex gap-4 mr-8">
-          <ThemeToggle />
+          <ThemeToggle darkMode={darkMode} toggleDark={toggleDark} />
           <button className="hover:underline  font-title text-md">
             <IoSettingsSharp
               onClick={handleSideBar}
@@ -85,6 +85,8 @@ const NavBar = ({ loggedIn, setLoggedIn }) => {
         handleSideBar={handleSideBar}
         loggedIn={loggedIn}
         setLoggedIn={setLoggedIn}
+        darkMode={darkMode}
+        toggleDark={toggleDark}
       />
     </div>
   );

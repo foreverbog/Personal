@@ -6,14 +6,34 @@ import NotFound from "./pages/NotFound";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import { Route, Routes, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 function App() {
   const location = useLocation();
   const [loggedIn, setLoggedIn] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
   const handleOnClick = () => {
     setLoggedIn(!loggedIn);
   };
+  //Store theme pref in local storage
+  const toggleDark = () => {
+    const newTheme = !darkMode;
+    setDarkMode(newTheme);
+    document.body.classList.toggle("dark", newTheme);
+    localStorage.setItem("darkTheme", newTheme);
+  };
+
+  //Get theme pref
+  useEffect(() => {
+    const theme = localStorage.getItem("darkTheme");
+
+    if (theme !== null) {
+      const setDark = theme === "true";
+      setDarkMode(setDark);
+      document.body.classList.toggle("dark", setDark);
+    }
+  }, []);
+
   return (
     <>
       <div className="wrapper">
@@ -41,7 +61,12 @@ function App() {
             <RegisterForm Register={handleRegister} />
           )}
         </div> */}
-        <NavBar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+        <NavBar
+          loggedIn={loggedIn}
+          setLoggedIn={setLoggedIn}
+          darkMode={darkMode}
+          toggleDark={toggleDark}
+        />
         <AnimatePresence>
           <Routes location={location} key={location.pathname}>
             <Route

@@ -4,7 +4,7 @@
 
 @layer components {
   .wrapper {
-    @apply bg-[url('/src/assets/images/back.jpg')] bg-cover h-dvh dark:bg-[url('/src/assets/images/back-dark.jpg')];
+    @apply bg-[url('/public/images/back.jpg')] bg-cover h-dvh dark:bg-[url('/public/images/back-dark.jpg')];
   }
 
   .form {
