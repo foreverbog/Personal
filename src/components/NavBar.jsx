@@ -26,7 +26,10 @@ const NavBar = ({ loggedIn, setLoggedIn, darkMode, toggleDark }) => {
   };
   return (
     <div className="bg-primary-light bg-opacity-70 dark:bg-primary-dark hover:bg-neutral-100  duration-300 flex justify-between items-center">
-      <NavLink to="/" className="flex items-center justify-center">
+      <NavLink
+        to="/"
+        className="flex items-center justify-center bg-gradient-to-br from-secondary-light to-accent-light dark:from-secondary-dark dark:to-accent-dark bg-clip-text text-transparent"
+      >
         <img className="w-20 lg:ml-8 " src={Logo} alt="logo" />
         <span className="font-title dark:text-white/60 italic text-2xl tracking-widest ml-2 max-sm:hidden  ">
           toddify
