@@ -3,6 +3,7 @@ import LoginForm from "./pages/LoginForm";
 import RegisterForm from "./pages/RegisterForm";
 import TodoList from "./pages/TodoList";
 import Contact from "./pages/Contact";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -113,6 +114,7 @@ function App() {
             />
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/docs" element={<About />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>

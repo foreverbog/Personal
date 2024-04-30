@@ -48,14 +48,14 @@
     @apply border-none outline-none  text-white bg-gradient-to-br from-secondary-light to-accent-light hover:scale-x-105 transition-all ease-in-out duration-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  font-title dark:from-secondary-dark dark:to-accent-dark dark:text-primary-dark;
   }
   .taskStyle {
-    @apply flex  p-4 rounded-lg hover:scale-105 transition duration-500 bg-neutral-200 text-lg cursor-pointer dark:bg-[#393e4679] dark:text-white/60;
+    @apply flex  p-4 rounded-lg hover:scale-105 hover:transition hover:duration-500 bg-neutral-200 text-lg cursor-pointer dark:bg-[#393e4679] dark:text-white/60;
   }
   .taskStyleCompleted {
     @apply flex bg-gradient-to-br  from-secondary-light/50 to-accent-light/50 opacity-50 p-4 rounded-lg hover:scale-105 transition-all duration-500 text-black text-lg cursor-pointer dark:from-secondary-dark/50 dark:to-accent-dark/50 dark:text-primary-dark;
   }
 
   .sideBarStyles {
-    @apply font-title flex flex-col absolute top-0 right-0 bottom-0 w-80 bg-primary-light z-50  shadow-[0_0_0_10000px_rgba(0,0,0,.40)] transition-all ease-out duration-500 overflow-scroll dark:bg-primary-dark;
+    @apply font-title flex flex-col absolute top-0 right-0 bottom-0 w-80 bg-primary-light z-50  shadow-[0_0_0_10000px_rgba(0,0,0,.40)] transition-all ease-out duration-500 overflow-auto dark:bg-primary-dark;
   }
 
   .sideBarNav {
