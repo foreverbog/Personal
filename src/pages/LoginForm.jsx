@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const LoginForm = ({ logInClick }) => {
   return (
     <motion.main
-      className="form main__container"
+      className="form main__container "
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

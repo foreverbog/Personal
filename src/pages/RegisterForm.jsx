@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const RegisterForm = () => {
   return (
     <motion.div
-      className="tallFormStyle main__container"
+      className="tallFormStyle main__container "
       s
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -73,7 +73,9 @@ const RegisterForm = () => {
         </label>
         <button className="createBtn w-[50%] mt-4">Register</button>
         <div className="flex flex-col">
-          <p className="text-center mb-4">Or Register with:</p>
+          <p className="text-center mb-4 font-title dark:text-white/60">
+            Or Register with:
+          </p>
           <button
             type="button"
             className="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
