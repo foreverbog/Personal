@@ -124,6 +124,7 @@ const SideBar = ({
         </button>
       </div>
 
+      {/* loggedIn = true */}
       {loggedIn ? (
         <div className="flex flex-col justify-center items-center">
           <button className="mb-8  hover:scale-100">
@@ -202,39 +203,56 @@ const SideBar = ({
             />
           )}
 
-          <p className="w-full text-center">
+          <Link
+            to="/docs"
+            onClick={handleSideBar}
+            className="w-full text-center"
+          >
             <span className="sideBarNav">About</span>
-          </p>
+          </Link>
           <p className="w-full text-center">
             <span className="sideBarNav">Help</span>
           </p>
-          <p className="w-full text-center">
-            <span className="sideBarNav">Settings</span>
-          </p>
+          <Link
+            to="/contact"
+            onClick={handleSideBar}
+            className="w-full text-center"
+          >
+            <span className="sideBarNav">Contact</span>
+          </Link>
 
-          <button
+          <Link
+            onClick={handleLogOut}
+            to="/"
             className={`${
               editProfile || uploadImage
                 ? "createBtn w-1/2 "
                 : "absolute bottom-20 createBtn w-1/2"
             }`}
           >
-            <Link onClick={handleLogOut} to="/">
-              Log Out
-            </Link>
-          </button>
+            <button>Log Out</button>
+          </Link>
         </div>
       ) : (
+        // Logged in = false
         <div className="flex flex-col justify-center items-center gap-8 my-[20%]">
-          <p className="w-full text-center">
+          <Link
+            onClick={handleSideBar}
+            to="/docs"
+            className="w-full text-center"
+          >
             <span className="sideBarNav">About</span>
-          </p>
+          </Link>
           <p className="w-full text-center">
             <span className="sideBarNav">Help</span>
           </p>
-          <p className="w-full text-center">
-            <span className="sideBarNav">Setting</span>
-          </p>
+          <Link
+            to="/contact"
+            onClick={handleSideBar}
+            className="w-full text-center"
+          >
+            <span className="sideBarNav">Contact</span>
+          </Link>
 
           <Link
             to="/login"
