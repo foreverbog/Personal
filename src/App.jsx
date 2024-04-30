@@ -2,6 +2,7 @@ import GuestContainer from "./pages/GuestContainer";
 import LoginForm from "./pages/LoginForm";
 import RegisterForm from "./pages/RegisterForm";
 import TodoList from "./pages/TodoList";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -57,7 +58,7 @@ function App() {
   return (
     <>
       <div className="wrapper">
-        <Toaster containerStyle />
+        <Toaster />
         {/* BEFORE LEARNING REACT ROUTE */}
         {/* {!login && !register ? (
           <h1 className="font-title text-neutral-100 text-[4rem] text-center  pt-[200px]  lg:text-[5rem]">
@@ -111,6 +112,7 @@ function App() {
               }
             />
             <Route path="/register" element={<RegisterForm />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>

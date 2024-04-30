@@ -10,8 +10,8 @@ const Footer = () => {
         Copyright © 2024 Bogdan Lazar (foreverbog) - All right reserved
       </p>
       <div className="hidden lg:flex gap-8  grow justify-center items-center text-sm underline">
-        <Link to="/contact">About</Link>
-        <Link to="/docs">Contact</Link>
+        <Link to="/docs">About</Link>
+        <Link to="/contact">Contact</Link>
       </div>
       <div className="  flex gap-4  items-center justify-center lg:justify-self-end  mr-4">
         <a href="https://github.com/foreverbog/React-Todo-App" target="_blank">
