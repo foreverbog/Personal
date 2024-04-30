@@ -2,6 +2,7 @@ import UserAvatar from "./UserAvatar";
 import ThemeToggle from "./ThemeToggle";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 const SideBar = ({
   sideBar,
   handleSideBar,
@@ -29,21 +30,31 @@ const SideBar = ({
     setEditProfile(!editProfile);
   };
 
-  //Storing Last and First Name
-  const handleLastNameChange = (e) => {
-    const newLastName = e.target.value;
-    setLastName(newLastName);
-  };
-  const handleFirstNameChange = (e) => {
-    const newFirstName = e.target.value;
-    setFirstName(newFirstName);
-  };
-  //Submit the form -- Close the edit
+  // //Storing Last and First Name
+  // const handleLastNameChange = (e) => {
+  //   const newLastName = e.target.value;
+  //   setLastName(newLastName);
+  // };
+  // const handleFirstNameChange = (e) => {
+  //   const newFirstName = e.target.value;
+  //   setFirstName(newFirstName);
+  // };
+  // //Submit the form -- Close the edit
+  // const handleSave = (e) => {
+  //   e.preventDefault();
+  //   setEditProfile(false);
+  // };
+
+  //Submit form - update firstName and lastName
   const handleSave = (e) => {
     e.preventDefault();
+    const newLastName = e.target.elements.lastName.value;
+    const newFirstName = e.target.elements.firstName.value;
+    setLastName(newLastName);
+    setFirstName(newFirstName);
+
     setEditProfile(false);
   };
-
   //Change Avatar Color
   const handleChangeColor = () => {
     const colorIndex = Math.floor(Math.random() * colors.length);
@@ -67,14 +78,20 @@ const SideBar = ({
   const handleLogOut = () => {
     setLoggedIn(!loggedIn);
     handleSideBar();
+    toast.success("You have successfully logged out!", {
+      duration: 1000,
+      className:
+        "font-title text-xs bg-primary-light  dark:bg-white/60 dark:text-primary-dark",
+    });
   };
-  console.log();
+
   return (
     <div
       className={
         sideBar ? "sideBarStyles" : "sideBarStyles opacity-0 invisible  "
       }
     >
+      <Toaster />
       <div className="inline-flex justify-between items-center">
         <div className="ml-4">
           <ThemeToggle darkMode={darkMode} toggleDark={toggleDark} />
@@ -134,8 +151,7 @@ const SideBar = ({
                 Enter your last name
               </label>
               <input
-                value={lastName}
-                onChange={handleLastNameChange}
+                // onChange={handleLastNameChange}
                 id="lastName"
                 name="lastName"
                 className="loginInput"
@@ -147,8 +163,7 @@ const SideBar = ({
                 Enter your first name
               </label>
               <input
-                value={firstName}
-                onChange={handleFirstNameChange}
+                // onChange={handleFirstNameChange}
                 id="firstName"
                 name="firstName"
                 className="loginInput"
@@ -221,12 +236,13 @@ const SideBar = ({
             <span className="sideBarNav">Setting</span>
           </p>
 
-          <button
-            onClick={handleSideBar}
+          <Link
+            to="/login"
             className="absolute bottom-20 createBtn w-1/2"
+            onClick={handleSideBar}
           >
-            <Link to="/login">Log in</Link>
-          </button>
+            <button>Log in</button>
+          </Link>
         </div>
       )}
     </div>

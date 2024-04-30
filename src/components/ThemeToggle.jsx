@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 
 const ThemeToggle = ({ darkMode, toggleDark }) => {
@@ -18,7 +17,7 @@ const ThemeToggle = ({ darkMode, toggleDark }) => {
         }`}
       />
       <input
-        onClick={toggleDark}
+        onChange={toggleDark}
         type="checkbox"
         checked={darkMode}
         className="sr-only peer"

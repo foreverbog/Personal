@@ -24,12 +24,8 @@ const UserAvatar = ({
         ) : firstName.length > 0 && lastName.length > 0 ? (
           firstNameChar + lastNameChar
         ) : (
-          "BL"
+          "RU"
         )}
-        {/* {firstName.length > 0 && lastName.length > 0
-          ? firstNameChar + lastNameChar
-          : "BL"} */}
-        {/* <img src={avatarImage} alt={imageAlt} /> */}
       </span>
     </div>
   );
